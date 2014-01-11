@@ -3,11 +3,7 @@
 # from no to multiple toys.
 
 class Animal
-	attr_reader :name
-	attr_reader :age
-	attr_reader :gender
-	attr_reader :species
-	attr_reader :toys
+	attr_reader :name, :age, :gender, :species, :toys
 
 	def initialize(name, age, gender, species, toys=0)
 		@name = name
