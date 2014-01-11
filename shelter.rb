@@ -17,6 +17,11 @@ class Shelter
   def add_animal(animal)
     @animals.push(animal)
   end
+
+  # adds a new animal to the shelter
+  def remove_animal(animal)
+    @animals.push(animal)
+  end
   
   # displays all current shelter clients 
   def display_all_clients
@@ -27,4 +32,5 @@ class Shelter
   def display_all_animals
   	return self.animals
   end
+
 end

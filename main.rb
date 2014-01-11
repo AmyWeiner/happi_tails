@@ -3,6 +3,7 @@ require './animal'
 require './client'
 
 shelter = Shelter.new()
+animals = []
 
 def menu message
   puts `clear`
@@ -51,6 +52,7 @@ while choice != 'q'
     puts "Number Toys:"
     animal_toys = gets.chomp
     animal = Animal.new(animal_name, animal_age, animal_gender, animal_species, animal_toys)
+    animals.push(animal)
   when "4"
     message += 'option 4'
     # create a new client record by prompting for user input
@@ -68,10 +70,35 @@ while choice != 'q'
     shelter.add_client(client)
   when "5"
     message += 'option 5'
-    # facilitate client adoption of an animal
+    # facilitate client adoption of an animal by promting user for input
+    puts "Please enter the following details to locate the current animal record:"
+    puts ""
+    puts "Animal Name:"
+    animal_name = gets.chomp
+    puts "Animal Age:"
+    animal_age = gets.chomp
+    puts "Animal Gender:"
+    animal_gender = gets.chomp
+    puts "Animal Species:"
+    animal_species = gets.chomp
+    index = animals.find_index {|animal| animal.name == animal_name && animal.age == animal_age && animal.species == animal_species && animal.gender == animal_gender }
   when "6"
     message += 'option 6'
     # facilitate client putting up an animal for adoption
+    puts "Please enter the following details to put an animal up for adoption:"
+    puts ""
+    puts "Animal Name:"
+    animal_name = gets.chomp
+    puts "Animal Age:"
+    animal_age = gets.chomp
+    puts "Animal Gender:"
+    animal_gender = gets.chomp
+    puts "Animal Species:"
+    animal_species = gets.chomp
+    puts "Number Toys:"
+    animal_toys = gets.chomp
+    animal = Animal.new(animal_name, animal_age, animal_gender, animal_species, animal_toys)
+    shelter.animals.push(animal)
   else
       message += "I don't understand ..."
   end
