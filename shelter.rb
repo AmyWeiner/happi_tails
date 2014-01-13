@@ -20,18 +20,24 @@ class Shelter
 
   # adds a new animal to the shelter
   def remove_animal(animal)
-    @animals.push(animal)
+    @animals.delete(animal)
+  end
+
+  def add_pet(clent)
+  end
+
+  def remove_pet(client)
   end
   
   # displays all current shelter clients 
-  def display_all_clients
+  def display_client_records
   	self.clients.each do |client|
       puts "Name: #{client.name}    Number of Children: #{client.num_children}    Age: #{client.age}    Number of Pets: #{client.num_pets}"
     end
   end
 
   # displays all current shelter animals 
-  def display_all_animals
+  def display_animal_records
   	self.animals.each do |animal|
       puts "Name: #{animal.name}    Age: #{animal.age}    Gender: #{animal.gender}    Species: #{animal.species}"
     end
