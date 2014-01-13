@@ -57,6 +57,7 @@ def create_client_record
   $shelter.add_client(client)
 end
 
+# updates existing client record by locating client record via user input, and incrementing client pet attribute by one
 def update_client_record_add_pet
   puts "Please enter the following details to retreive the existing client record:\n\n"
     puts "Client Name:"
@@ -67,8 +68,15 @@ def update_client_record_add_pet
     client_age = gets.chomp
     puts "Number of Pets:"
     client_num_pets = gets.chomp
+    $shelter.clients.each do |client|
+      if client.name == client_name && client.num_children == client_num_children && client.age == client_age && 
+        client.num_pets == client_num_pets
+        puts "good"
+      end
+    end
 end
 
+# updates existing client record by locating client record via user input, and decrementing client pet attribute by one
 def update_client_record_subtract_pet
   puts "Please enter the following details to retreive the existing client record:\n\n"
     puts "Client Name:"
@@ -87,6 +95,7 @@ def update_client_record_subtract_pet
     end
 end
 
+# executes menu options based on user input
 def execute_choice(choice)
   case choice
   when "1"
