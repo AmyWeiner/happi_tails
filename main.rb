@@ -71,7 +71,7 @@ def update_client_record_add_pet
     $shelter.clients.each do |client|
       if client.name == client_name && client.num_children == client_num_children && client.age == client_age && 
         client.num_pets == client_num_pets
-        puts "good"
+        puts "The client has adopted the animal."  # stub output for incomplete method
       end
     end
 end
@@ -90,7 +90,7 @@ def update_client_record_subtract_pet
     $shelter.clients.each do |client|
       if client.name == client_name && client.num_children == client_num_children && client.age == client_age && 
         client.num_pets == client_num_pets
-        puts "good"
+        puts "The client has put the animal up for adoption." # stub output for incomplete method
       end
     end
 end
@@ -115,11 +115,13 @@ def execute_choice(choice)
   when "5"
     # facilitate client adoption of an animal by promting user for input
     delete_animal_record
-    #update_client_record_add_pet
+    update_client_record_add_pet
+    sleep(1)
   when "6"
     # facilitate client putting up an animal for adoption
     create_animal_record
     update_client_record_subtract_pet
+    sleep(1)
    else
     puts "Please enter a valid menu option"
     sleep(1)
