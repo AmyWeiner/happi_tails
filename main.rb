@@ -5,7 +5,7 @@ require './client'
 shelter = Shelter.new()
 animals = []
 
-def menu message
+def display_menu(message)
   puts `clear`
   puts "*** Happi Tails v1.0 ***\n\n"
 
@@ -23,7 +23,7 @@ def menu message
 end
 
 message = ""
-choice = menu message
+choice = display_menu message
 
 while choice != 'q'
   message = ""
@@ -98,7 +98,7 @@ while choice != 'q'
     puts "Number Toys:"
     animal_toys = gets.chomp
     animal = Animal.new(animal_name, animal_age, animal_gender, animal_species, animal_toys)
-    shelter.animals.push(animal)
+    animals.push(animal)
   else
       message += "I don't understand ..."
   end
