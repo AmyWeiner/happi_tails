@@ -6,7 +6,7 @@ $shelter = Shelter.new()
 
 # creates a new animal record by prompting for user input
 def create_animal_record
-puts "Please enter the following details to create the new animal record:\n\n"
+    puts "Please enter the following details to create the new animal record:\n\n"
     puts "Animal Name:"
     animal_name = gets.chomp
     puts "Animal Age:"
@@ -23,7 +23,7 @@ end
 
 # deletes an existing animal record by prompting for user input
 def delete_animal_record
-puts "Please enter the following details to find the current animal record:\n\n"
+    puts "Please enter the following details to find the current animal record:\n\n"
     puts "Animal Name:"
     animal_name = gets.chomp
     puts "Animal Age:"
@@ -95,7 +95,7 @@ def update_client_record_subtract_pet
     end
 end
 
-# executes menu options based on user input
+# @excute_choice  executes menu options based on user input
 def execute_choice(choice)
   case choice
   when "1"

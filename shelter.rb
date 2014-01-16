@@ -1,5 +1,5 @@
-# This file defines the Shelter class. A Shelter object operates as a databse system that contains arrays
-# of the current shelter animals and clients. 
+# This file defines the Shelter class. A Shelter object operates as a databse 
+# system that contains arrays of the current shelter animals and clients. 
 class Shelter
 	attr_accessor :clients, :animals
 
@@ -24,10 +24,10 @@ class Shelter
   end
 
   # not yet implemented
-  def add_pet(clent)
+  def add_pet(client)
   end
 
-  not yet implemented
+  #not yet implemented
   def remove_pet(client)
   end
   
