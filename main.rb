@@ -15,7 +15,7 @@ def create_animal_record
     animal_gender = gets.chomp
     puts "Animal Species:"
     animal_species = gets.chomp
-    puts "Number Toys:"
+    puts "Number of Toys:"
     animal_toys = gets.chomp
     animal = Animal.new(animal_name, animal_age, animal_gender, animal_species, animal_toys)
     $shelter.add_animal(animal)
@@ -34,10 +34,11 @@ def delete_animal_record
     animal_species = gets.chomp
     puts "Number Toys:"
     animal_toys = gets.chomp
+    animal_record = Animal.new(animal_name, animal_age, animal_gender, animal_species, animal_toys)
     $shelter.animals.each do |animal|
       if animal.name == animal_name && animal.age == animal_age && animal.gender == animal_gender && 
         animal.species == animal_species && animal.toys == animal_toys
-        $shelter.remove_animal(animal)
+        $shelter.remove_animal(animal_record)
       end
     end
 end
@@ -95,17 +96,17 @@ def update_client_record_subtract_pet
     end
 end
 
-# @excute_choice  executes menu options based on user input
+# executes menu options based on user input
 def execute_choice(choice)
   case choice
   when "1"
     # displays a list of the current shelter animals in formatted output
     $shelter.display_animal_records
-    sleep(5)
+    sleep(2)
   when "2"
     # displays a list of the current shelter clients in formatted output
     $shelter.display_client_records
-    sleep(5)
+    sleep(2)
   when "3"
     # creates a new animal record, and adds it to the shelter database
     create_animal_record
@@ -146,7 +147,7 @@ end
 # gets user input based on app menu options
 def get_input
   display_menu
-    choice = gets.chomp
+  choice = gets.chomp
 end
 
 # runs or quits the app based on user input from menu options
